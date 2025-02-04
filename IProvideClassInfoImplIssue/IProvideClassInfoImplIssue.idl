@@ -1,0 +1,37 @@
+// IProvideClassInfoImplIssue.idl : IDL source for IProvideClassInfoImplIssue
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (IProvideClassInfoImplIssue.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(1013c678-c0d5-4c44-827c-12554a10d975),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IATLSimpleObject : IDispatch
+{
+	[id(1)] HRESULT Method1([in] BSTR str, [out, retval] BSTR* ret);
+};
+[
+	uuid(152b2648-b165-4afd-8e7e-3711ca6804ce),
+	version(1.0),
+]
+library IProvideClassInfoImplIssueLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(1d170c6b-53f8-48a4-8027-276b026f0631)
+	]
+	coclass ATLSimpleObject
+	{
+		[default] interface IATLSimpleObject;
+	};
+};
+
+import "shobjidl.idl";
